@@ -292,6 +292,3 @@ apps/desktop/src-tauri/target/
 apps/desktop/vite-preview.*.log
 ```
 
-## Resume Bullet
-
-Built a permissioned memory runtime for AI agents using FastAPI, SQLAlchemy, Tauri/React, MCP, and a Codex/Claude skill pack. Implemented user-reviewed ingestion, grant-gated retrieval, project-scoped isolation, relationship memory, update/supersede lifecycle, summary-first context composition, SQL facts, audit logs, and revocable Project Memory Share Packs for collaborator onboarding.
