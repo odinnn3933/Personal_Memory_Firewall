@@ -274,21 +274,3 @@ For production, this would still need real auth, encryption at rest, secret mana
 | Zep-style graph context | temporal graph context | SQL-authoritative ACL with optional graph enhancement |
 | Letta-style memory | agent memory layers | user-controlled context packages for external agents |
 | Vector-store demos | semantic search | review, update, grants, audit, and Share Packs |
-
-## Release Checklist
-
-See [docs/release-checklist.md](docs/release-checklist.md).
-
-Do not commit local artifacts:
-
-```text
-memory_gateway.db
-.env
-.pytest_cache/
-__pycache__/
-apps/desktop/node_modules/
-apps/desktop/dist/
-apps/desktop/src-tauri/target/
-apps/desktop/vite-preview.*.log
-```
-
