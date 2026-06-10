@@ -1,0 +1,45 @@
+[project]
+name = "permissioned-agent-memory-gateway"
+version = "0.1.0"
+description = "Permissioned, auditable, self-evolving memory gateway for agent systems."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Memory Gateway Contributors" }]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy>=2.0.30",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "httpx>=0.27.0",
+    "alembic>=1.13.0",
+    "neo4j>=5.20.0",
+    "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.2.0"]
+postgres = ["psycopg[binary]>=3.2.0"]
+langgraph = ["langgraph>=0.2.0"]
+crewai = ["crewai>=0.95.0"]
+dev = ["pytest>=8.2.0", "pytest-cov>=5.0.0", "ruff>=0.5.0"]
+
+[project.scripts]
+memory-gateway-api = "memory_gateway.cli:run_api"
+memory-gateway-mcp = "memory_gateway.cli:run_mcp"
+memory-gateway-seed = "memory_gateway.cli:seed"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["memory_gateway"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
